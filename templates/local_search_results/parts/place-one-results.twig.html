@@ -1,0 +1,11 @@
+Recommended Reviews for ...
+<div class="card-group">
+  {% for bus in review_results %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ bus.0.name }}</h5>
+      <p class="card-text">{{ bus.text }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>

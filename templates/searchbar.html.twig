@@ -1,0 +1,9 @@
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Navbar</a>
+  <form class="form-inline" type="get" action="/local/search">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" value="{% if local_term_results.local_term is defined %}{{local_term_results.local_term}}{% endif %}" name="localTerm" aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search Area" name="cityLocation" value=" {% if local_term_results.city_location is defined %}{{local_term_results.city_location}} {% endif %}" aria-label="Search Location">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>

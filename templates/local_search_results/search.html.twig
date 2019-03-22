@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{#Local results for: {{local_term_results.local_term}} #}{% endblock %}
+
+
+  {% block body %}
+    <style>
+
+    </style>
+
+    <div class="example-wrapper">
+     <h1>Local results found for {{local_term_results.local_term}}! In {{local_term_results.city_location}}</h1> 
+    </div>
+
+    <div class="container-fluid">
+
+      {{ include('local_search_results/parts/news-widget.html.twig') }}
+
+     <div class="col-md-6 col-lg-6 float-left">
+      {{ include('local_search_results/parts/local-yelp-results.html.twig') }}
+
+    </div>
+
+
+    <div class="col-md-3 col-md-3 float-right">
+  	 {{ include('local_search_results/parts/main-map.html.twig') }}  
+   </div>
+ </div>
+{% endblock %}

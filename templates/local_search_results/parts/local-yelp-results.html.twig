@@ -1,0 +1,39 @@
+{% for bus in local_results.business_results %}
+
+
+  {% if bus.image_url %}
+
+    <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 border-top local-listing" style="background-image: url(' {{bus.image_url}} ')">
+
+    {% else %}
+      <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 border-top local-listing" style="background-image: url(' /images/local_results/placeholder_local.jpg ')">
+    {% endif %}
+
+    <div class="row">
+     <div class="col-sm-10 col-md-10 col-lg-10 float-right">
+       <h2><a href="/local/places/{{ bus.id }}">{{ bus.name }}</a></h2>
+
+       <p>   {{ bus.display_phone }} </p>
+
+
+       {% for loc in bus.location %}
+        <p>  {{ loc }} </p>
+      {% endfor %}
+
+      <div class="local-review">
+
+        {% if bus.rating == 1.5 or bus.rating == 2.5 or bus.rating == 3.5 or  bus.rating == 4.5 %}
+          <img src ="/images/small/small_{{ bus.rating|replace({'.5': ''}) }}_half.png"  class="img-thumbnail"  />
+          <p> {{ bus.rating|replace({'.5': ''}) }} </p>
+        {% else %}
+         <img src ="/images/small/small_{{ bus.rating }}.png"  class="img-thumbnail"  />
+         <p>  </p>
+       {% endif %}
+
+     </div>
+
+   </div>
+ </div>
+</div>
+
+{% endfor %}
